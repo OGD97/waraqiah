@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مطبعة الورقية | خدمات طباعة عالية الجودة</title>
+
+<!-- Bootstrap RTL (default) -->
+<link id="bootstrap-rtl-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+<!-- Bootstrap LTR (initially disabled) -->
+<link id="bootstrap-ltr-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" disabled>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - Tajawal for Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #92342F; /* Main deep reddish-brown */
+        --primary-light: #B05A55; /* Lighter version of main color */
+        --primary-dark: #6D2521; /* Darker version of main color */
+        --secondary-color: #5E4A3E; /* Complementary brown */
+        --accent-color: #C77D78; /* Accent color */
+        --text-dark: #333333; /* Dark text color */
+        --text-light: #555555; /* Light text color */
+        --text-muted: #777777; /* Muted text color */
+        --bg-light: #f8f5f3; /* Light background */
+        --bg-white: #ffffff; /* White background */
+        --border-color: #e0d9d6; /* Border color */
+      }
+
+      * {
+        font-family: "Tajawal", sans-serif;
+      }
+
+      body {
+        background: var(--bg-light);
+        overflow-x: hidden;
+        text-align: right;
+      }
+
+      /* Header Styles */
+      .navbar {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-dark) !important;
+        transition: all 0.3s ease;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      /* Language Switcher */
+      .language-switcher {
+        margin-right: 15px;
+      }
+      
+      .language-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      
+      .language-btn:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        padding-top: 80px; /* Add padding to account for fixed navbar */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(146, 52, 47, 0.1) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+      
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+
+      .app-image {
+        max-width: 80%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(146, 52, 47, 0.2);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* CTA Buttons */
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .cta-btn {
+        background: var(--primary-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(146, 52, 47, 0.2);
+        font-weight: 500;
+      }
+
+      .cta-btn:hover {
+        background: var(--primary-dark);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(109, 37, 33, 0.3);
+      }
+
+      .cta-btn i {
+        font-size: 1.5rem;
+      }
+
+      .cta-btn .small-text {
+        font-size: 0.8rem;
+        display: block;
+        line-height: 1;
+      }
+
+      .cta-btn .large-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 80px 0;
+        background-color: var(--bg-white);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--primary-light)
+        );
+        position: absolute;
+        bottom: -15px;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 2px;
+      }
+
+      .feature-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid var(--border-color);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.1);
+        border-color: var(--primary-color);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-light)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .feature-description {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      /* Services Section */
+      .services-section {
+        background: linear-gradient(135deg, var(--bg-light) 0%, #f0e9e7 100%);
+        padding: 80px 0;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid var(--primary-color);
+      }
+
+      .service-number {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgba(146, 52, 47, 0.1);
+        line-height: 1;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.1);
+      }
+
+      .service-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .service-description {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-light) 100%
+        );
+        padding: 80px 0;
+        color: white;
+      }
+
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .testimonial-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .testimonial-text::before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: -20px;
+        right: -15px;
+        opacity: 0.2;
+        font-family: serif;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+      }
+
+      .testimonial-role {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--primary-dark);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .contact-btn {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(146, 52, 47, 0.3);
+      }
+
+      .contact-btn:hover {
+        background: var(--primary-light);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(176, 90, 85, 0.4);
+      }
+
+      /* Portfolio Section */
+      .portfolio-section {
+        padding: 80px 0;
+        background-color: var(--bg-white);
+      }
+
+      .portfolio-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+        height: 300px;
+      }
+
+      .portfolio-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.2);
+      }
+
+      .portfolio-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(146, 52, 47, 0.8), transparent);
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-card:hover .portfolio-overlay {
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--text-dark);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        font-size: 0.9rem;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--accent-color);
+        color: var(--text-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+
+
+
+
+      @media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+    padding: 150px 0 60px; /* Adjust padding for mobile */
+  }
+  
+  .hero-content {
+    padding-top: 30px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+}
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+
+      .fade-in.animate {
+        opacity: 1;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 60px 0;
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+      
+      /* Language-specific styles */
+      [lang="en"] {
+        direction: ltr;
+        text-align: left;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      [lang="en"] .section-title::after {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="display: flex; align-items: center; gap: 15px"
+        >
+          <!-- Your logo -->
+          <div
+            style="
+              width: 75px;
+              height: 75px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <img
+              src="logo.png"
+              alt="مطبعة الورقية Logo"
+              style="
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+              "
+            />
+          </div>
+          <!-- <span class="brand-text">مطبعة الورقية</span> -->
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#services" data-key="nav.services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio" data-key="nav.portfolio">معرض الأعمال</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features" data-key="nav.features">لماذا نحن؟</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-key="nav.contact">اتصل بنا</a>
+            </li>
+          </ul>
+          <div class="language-switcher">
+            <button class="language-btn" id="languageToggle">
+              <i class="fas fa-language"></i>
+              <span id="currentLanguage">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content fade-in">
+            <h1 class="hero-title" data-key="hero.title">مطبعة الورقية</h1>
+            <h2 class="hero-subtitle" data-key="hero.subtitle">
+              حلول طباعة متكاملة بجودة عالية
+            </h2>
+            <p class="hero-description" data-key="hero.description">
+              نقدم في مطبعة الورقية خدمات طباعة متكاملة بدءاً من التصميم وحتى الطباعة والتغليف. نستخدم أحدث التقنيات ومواد عالية الجودة لضمان إرضاء عملائنا.
+            </p>
+            <div class="cta-buttons fade-in">
+              <a href="#contact" class="cta-btn">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <span class="large-text" data-key="hero.cta1">اطلب خدمتك الآن</span>
+                </div>
+              </a>
+              <a href="#portfolio" class="cta-btn" style="background: var(--secondary-color)">
+                <i class="fas fa-images"></i>
+                <div>
+                  <span class="large-text" data-key="hero.cta2">معرض الأعمال</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center fade-in pt-5">
+            <img
+              src="images/hero.svg"
+              alt="مطبعة الورقية"
+              class="app-image img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <div class="stat-number">15+</div>
+            <div class="stat-label" data-key="stats.years">سنوات الخبرة</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label" data-key="stats.clients">عميل راضٍ</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">100+</div>
+            <div class="stat-label" data-key="stats.services">نوع خدمة</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label" data-key="stats.support">خدمة عملاء</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title fade-in" data-key="services.title">خدماتنا</h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">1</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-book fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service1.title">طباعة الكتب والمجلات</h3>
+              <p class="service-description" data-key="services.service1.description">
+                طباعة الكتب والمجلات بجودة عالية وبأحجام مختلفة مع خيارات متعددة للتغليف
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">2</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-file-invoice fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service2.title">طباعة المستندات الرسمية</h3>
+              <p class="service-description" data-key="services.service2.description">
+                طباعة الفواتير، الشهادات، السير الذاتية والمستندات الرسمية الأخرى
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">3</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-box-open fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service3.title">طباعة العبوات والتغليف</h3>
+              <p class="service-description" data-key="services.service3.description">
+                تصميم وطباعة عبوات المنتجات بجودة عالية تناسب مختلف أنواع السلع
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">4</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-calendar-alt fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service4.title">طباعة التقاويم والدفاتر</h3>
+              <p class="service-description" data-key="services.service4.description">
+                طباعة تقاويم سنوية، دفاتر ملاحظات، ومفكرات بأشكال وأحجام مختلفة
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">5</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-id-card fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service5.title">طباعة البطاقات والبروشورات</h3>
+              <p class="service-description" data-key="services.service5.description">
+                تصاميم احترافية لبطاقات العمل، الدعوات، البروشورات والفلائر
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">6</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-pen-fancy fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title" data-key="services.service6.title">خدمات التصميم</h3>
+              <p class="service-description" data-key="services.service6.description">
+                تصميم جرافيك احترافي لجميع منتجات الطباعة بفريق من المصممين المبدعين
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-title fade-in" data-key="portfolio.title">معرض أعمالنا</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/booklet.jpg" alt="كتب">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item1.title">طباعة الكتب</h3>
+                <p data-key="portfolio.item1.description">تصاميم احترافية لكتب بمختلف الأحجام</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/bcards.jpg" alt="بطاقات">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item2.title">بطاقات العمل</h3>
+                <p data-key="portfolio.item2.description">تصاميم مبتكرة لبطاقات العمل</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/marketing.jpg" alt="تغليف">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item3.title">تصاميم التغليف</h3>
+                <p data-key="portfolio.item3.description">حلول مبتكرة لتغليف المنتجات</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/flyer.jpg" alt="تقاويم">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item4.title">التقاويم السنوية</h3>
+                <p data-key="portfolio.item4.description">تصاميم مميزة للتقاويم</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/brochure.jpg" alt="بروشورات">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item5.title">البروشورات</h3>
+                <p data-key="portfolio.item5.description">تصاميم دعائية مبتكرة</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="images/products/packaging.jpg" alt="مجلات">
+              <div class="portfolio-overlay">
+                <h3 data-key="portfolio.item6.title">المجلات</h3>
+                <p data-key="portfolio.item6.description">طباعة مجلات بجودة عالية</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title fade-in" data-key="features.title">لماذا تختار مطبعة الورقية؟</h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature1.title">جودة عالية</h3>
+              <p class="feature-description" data-key="features.feature1.description">
+                نستخدم أفضل المواد وأحدث التقنيات لضمان أعلى مستويات الجودة
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature2.title">تسليم في الوقت المحدد</h3>
+              <p class="feature-description" data-key="features.feature2.description">
+                نلتزم بمواعيد التسليم المتفق عليها دون تأخير
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature3.title">أسعار تنافسية</h3>
+              <p class="feature-description" data-key="features.feature3.description">
+                نقدم أفضل الأسعار مع الحفاظ على الجودة العالية
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature4.title">تصاميم إبداعية</h3>
+              <p class="feature-description" data-key="features.feature4.description">
+                فريق تصميم مبدع يقدم أفكاراً مبتكرة تلبي احتياجاتك
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature5.title">دعم فني متكامل</h3>
+              <p class="feature-description" data-key="features.feature5.description">
+                خدمة عملاء متاحة على مدار الساعة لمساعدتك
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <h3 class="feature-title" data-key="features.feature6.title">خدمة التوصيل</h3>
+              <p class="feature-description" data-key="features.feature6.description">
+                نقدم خدمة توصيل سريعة وآمنة لجميع أنحاء المملكة
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title fade-in" style="color: white" data-key="testimonials.title">
+          آراء عملائنا
+        </h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text" data-key="testimonials.testimonial1.text">
+                تعاملت مع مطبعة الورقية لطباعة كتبي وكانت النتيجة ممتازة. الجودة عالية والتسليم في الموعد المحدد. أنصح الجميع بالتعامل معهم.
+              </p>
+              <div class="testimonial-author" data-key="testimonials.testimonial1.author">أ. محمد السديري</div>
+              <div class="testimonial-role" data-key="testimonials.testimonial1.role">كاتب ومؤلف</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text" data-key="testimonials.testimonial2.text">
+                أفضل مطبعة تعاملت معها من حيث الجودة والسعر وخدمة العملاء. فريق التصميم مبدع جداً ويقدم أفكاراً رائعة.
+              </p>
+              <div class="testimonial-author" data-key="testimonials.testimonial2.author">شركة النخبة للتجارة</div>
+              <div class="testimonial-role" data-key="testimonials.testimonial2.role">مدير التسويق</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text" data-key="testimonials.testimonial3.text">
+                طبعنا جميع مطبوعاتنا الدعائية مع مطبعة الورقية منذ 5 سنوات ولم نخيب ظننا أبداً. الجودة تتطور عاماً بعد عام.
+              </p>
+              <div class="testimonial-author" data-key="testimonials.testimonial3.author">مدرسة الأجيال</div>
+              <div class="testimonial-role" data-key="testimonials.testimonial3.role">مدير المدرسة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="contact-title fade-in" data-key="contact.title">تواصل معنا</h2>
+        <p class="lead fade-in" data-key="contact.subtitle">
+          نحن هنا لمساعدتك في جميع استفساراتك وطلباتك
+        </p>
+        <div class="contact-buttons fade-in">
+          <a href="tel:+966500000000" class="contact-btn">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a href="mailto:info@alwaraqiah.com" class="contact-btn">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/966500000000" class="contact-btn">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/alwaraqiah" class="contact-btn">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/alwaraqiah" class="contact-btn">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col-lg-6 mx-auto">
+            <div class="fade-in" style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
+              <form>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="الاسم الكامل" style="background: rgba(255,255,255,0.8);" data-key="form.name">
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="البريد الإلكتروني" style="background: rgba(255,255,255,0.8);" data-key="form.email">
+                </div>
+                <div class="mb-3">
+                  <input type="tel" class="form-control" placeholder="رقم الهاتف" style="background: rgba(255,255,255,0.8);" data-key="form.phone">
+                </div>
+                <div class="mb-3">
+                  <select class="form-select" style="background: rgba(255,255,255,0.8);" data-key="form.service">
+                    <option selected data-key="form.serviceDefault">نوع الخدمة المطلوبة</option>
+                    <option data-key="form.service1">طباعة كتب</option>
+                    <option data-key="form.service2">طباعة مستندات</option>
+                    <option data-key="form.service3">تصاميم جرافيك</option>
+                    <option data-key="form.service4">طباعة عبوات</option>
+                    <option data-key="form.service5">استشارة طباعية</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="تفاصيل طلبك" style="background: rgba(255,255,255,0.8);" data-key="form.message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" style="background: var(--primary-light); border: none; padding: 12px; font-weight: 600;" data-key="form.submit">
+                  أرسل الطلب
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;" data-key="footer.aboutTitle">مطبعة الورقية</h4>
+          <p data-key="footer.aboutText">
+            متخصصون في خدمات الطباعة بجميع أنواعها منذ عام 2008. نقدم حلولاً متكاملة من التصميم حتى الطباعة والتغليف.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;" data-key="footer.linksTitle">روابط سريعة</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#services" style="color: white; text-decoration: none;" data-key="footer.link1">خدماتنا</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#portfolio" style="color: white; text-decoration: none;" data-key="footer.link2">معرض الأعمال</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#features" style="color: white; text-decoration: none;" data-key="footer.link3">لماذا نحن؟</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#contact" style="color: white; text-decoration: none;" data-key="footer.link4">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;" data-key="footer.contactTitle">معلومات الاتصال</h4>
+          <p>
+            <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i>
+            <span data-key="footer.address">الرياض، المملكة العربية السعودية</span>
+          </p>
+          <p>
+            <i class="fas fa-phone" style="margin-left: 5px;"></i>
+            +966 50 000 0000
+          </p>
+          <p>
+            <i class="fas fa-envelope" style="margin-left: 5px;"></i>
+            info@alwaraqiah.com
+          </p>
+        </div>
+      </div>
+      <hr style="background: rgba(255,255,255,0.1); margin: 2rem 0;">
+      <div class="row">
+        <div class="col-md-6 text-md-start">
+          <p data-key="footer.copyright">© 2023 مطبعة الورقية. جميع الحقوق محفوظة.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Language and Animation Script -->
+  <script>
+    // Language translations
+    const translations = {
+      ar: {
+        // Navigation
+        "nav.services": "خدماتنا",
+        "nav.portfolio": "معرض الأعمال",
+        "nav.features": "لماذا نحن؟",
+        "nav.contact": "اتصل بنا",
+        
+        // Hero Section
+        "hero.title": "مطبعة الورقية",
+        "hero.subtitle": "حلول طباعة متكاملة بجودة عالية",
+        "hero.description": "نقدم في مطبعة الورقية خدمات طباعة متكاملة بدءاً من التصميم وحتى الطباعة والتغليف. نستخدم أحدث التقنيات ومواد عالية الجودة لضمان إرضاء عملائنا.",
+        "hero.cta1": "اطلب خدمتك الآن",
+        "hero.cta2": "معرض الأعمال",
+        
+        // Stats
+        "stats.years": "سنوات الخبرة",
+        "stats.clients": "عميل راضٍ",
+        "stats.services": "نوع خدمة",
+        "stats.support": "خدمة عملاء",
+        
+        // Services
+        "services.title": "خدماتنا",
+        "services.service1.title": "طباعة الكتب والمجلات",
+        "services.service1.description": "طباعة الكتب والمجلات بجودة عالية وبأحجام مختلفة مع خيارات متعددة للتغليف",
+        "services.service2.title": "طباعة المستندات الرسمية",
+        "services.service2.description": "طباعة الفواتير، الشهادات، السير الذاتية والمستندات الرسمية الأخرى",
+        "services.service3.title": "طباعة العبوات والتغليف",
+        "services.service3.description": "تصميم وطباعة عبوات المنتجات بجودة عالية تناسب مختلف أنواع السلع",
+        "services.service4.title": "طباعة التقاويم والدفاتر",
+        "services.service4.description": "طباعة تقاويم سنوية، دفاتر ملاحظات، ومفكرات بأشكال وأحجام مختلفة",
+        "services.service5.title": "طباعة البطاقات والبروشورات",
+        "services.service5.description": "تصاميم احترافية لبطاقات العمل، الدعوات، البروشورات والفلائر",
+        "services.service6.title": "خدمات التصميم",
+        "services.service6.description": "تصميم جرافيك احترافي لجميع منتجات الطباعة بفريق من المصممين المبدعين",
+        
+        // Portfolio
+        "portfolio.title": "معرض أعمالنا",
+        "portfolio.item1.title": "طباعة الكتب",
+        "portfolio.item1.description": "تصاميم احترافية لكتب بمختلف الأحجام",
+        "portfolio.item2.title": "بطاقات العمل",
+        "portfolio.item2.description": "تصاميم مبتكرة لبطاقات العمل",
+        "portfolio.item3.title": "تصاميم التغليف",
+        "portfolio.item3.description": "حلول مبتكرة لتغليف المنتجات",
+        "portfolio.item4.title": "التقاويم السنوية",
+        "portfolio.item4.description": "تصاميم مميزة للتقاويم",
+        "portfolio.item5.title": "البروشورات",
+        "portfolio.item5.description": "تصاميم دعائية مبتكرة",
+        "portfolio.item6.title": "المجلات",
+        "portfolio.item6.description": "طباعة مجلات بجودة عالية",
+        
+        // Features
+        "features.title": "لماذا تختار مطبعة الورقية؟",
+        "features.feature1.title": "جودة عالية",
+        "features.feature1.description": "نستخدم أفضل المواد وأحدث التقنيات لضمان أعلى مستويات الجودة",
+        "features.feature2.title": "تسليم في الوقت المحدد",
+        "features.feature2.description": "نلتزم بمواعيد التسليم المتفق عليها دون تأخير",
+        "features.feature3.title": "أسعار تنافسية",
+        "features.feature3.description": "نقدم أفضل الأسعار مع الحفاظ على الجودة العالية",
+        "features.feature4.title": "تصاميم إبداعية",
+        "features.feature4.description": "فريق تصميم مبدع يقدم أفكاراً مبتكرة تلبي احتياجاتك",
+        "features.feature5.title": "دعم فني متكامل",
+        "features.feature5.description": "خدمة عملاء متاحة على مدار الساعة لمساعدتك",
+        "features.feature6.title": "خدمة التوصيل",
+        "features.feature6.description": "نقدم خدمة توصيل سريعة وآمنة لجميع أنحاء المملكة",
+        
+        // Testimonials
+        "testimonials.title": "آراء عملائنا",
+        "testimonials.testimonial1.text": "تعاملت مع مطبعة الورقية لطباعة كتبي وكانت النتيجة ممتازة. الجودة عالية والتسليم في الموعد المحدد. أنصح الجميع بالتعامل معهم.",
+        "testimonials.testimonial1.author": "أ. محمد السديري",
+        "testimonials.testimonial1.role": "كاتب ومؤلف",
+        "testimonials.testimonial2.text": "أفضل مطبعة تعاملت معها من حيث الجودة والسعر وخدمة العملاء. فريق التصميم مبدع جداً ويقدم أفكاراً رائعة.",
+        "testimonials.testimonial2.author": "شركة النخبة للتجارة",
+        "testimonials.testimonial2.role": "مدير التسويق",
+        "testimonials.testimonial3.text": "طبعنا جميع مطبوعاتنا الدعائية مع مطبعة الورقية منذ 5 سنوات ولم نخيب ظننا أبداً. الجودة تتطور عاماً بعد عام.",
+        "testimonials.testimonial3.author": "مدرسة الأجيال",
+        "testimonials.testimonial3.role": "مدير المدرسة",
+        
+        // Contact
+        "contact.title": "تواصل معنا",
+        "contact.subtitle": "نحن هنا لمساعدتك في جميع استفساراتك وطلباتك",
+        
+        // Form
+        "form.name": "الاسم الكامل",
+        "form.email": "البريد الإلكتروني",
+        "form.phone": "رقم الهاتف",
+        "form.service": "نوع الخدمة المطلوبة",
+        "form.serviceDefault": "نوع الخدمة المطلوبة",
+        "form.service1": "طباعة كتب",
+        "form.service2": "طباعة مستندات",
+        "form.service3": "تصاميم جرافيك",
+        "form.service4": "طباعة عبوات",
+        "form.service5": "استشارة طباعية",
+        "form.message": "تفاصيل طلبك",
+        "form.submit": "أرسل الطلب",
+        
+        // Footer
+        "footer.aboutTitle": "مطبعة الورقية",
+        "footer.aboutText": "متخصصون في خدمات الطباعة بجميع أنواعها منذ عام 2008. نقدم حلولاً متكاملة من التصميم حتى الطباعة والتغليف.",
+        "footer.linksTitle": "روابط سريعة",
+        "footer.link1": "خدماتنا",
+        "footer.link2": "معرض الأعمال",
+        "footer.link3": "لماذا نحن؟",
+        "footer.link4": "اتصل بنا",
+        "footer.contactTitle": "معلومات الاتصال",
+        "footer.address": "الرياض، المملكة العربية السعودية",
+        "footer.copyright": "© 2023 مطبعة الورقية. جميع الحقوق محفوظة."
+      },
+      en: {
+        // Navigation
+        "nav.services": "Our Services",
+        "nav.portfolio": "Portfolio",
+        "nav.features": "Why Choose Us?",
+        "nav.contact": "Contact Us",
+        
+        // Hero Section
+        "hero.title": "Al-Waraqiah Printing",
+        "hero.subtitle": "High-Quality Integrated Printing Solutions",
+        "hero.description": "At Al-Waraqiah Printing, we offer comprehensive printing services from design to printing and packaging. We use the latest technologies and high-quality materials to ensure customer satisfaction.",
+        "hero.cta1": "Order Your Service Now",
+        "hero.cta2": "View Portfolio",
+        
+        // Stats
+        "stats.years": "Years of Experience",
+        "stats.clients": "Satisfied Clients",
+        "stats.services": "Service Types",
+        "stats.support": "Customer Support",
+        
+        // Services
+        "services.title": "Our Services",
+        "services.service1.title": "Book & Magazine Printing",
+        "services.service1.description": "High-quality printing of books and magazines in various sizes with multiple packaging options",
+        "services.service2.title": "Official Documents Printing",
+        "services.service2.description": "Printing of invoices, certificates, resumes and other official documents",
+        "services.service3.title": "Packaging Printing",
+        "services.service3.description": "Design and printing of product packaging with high quality suitable for various types of goods",
+        "services.service4.title": "Calendars & Notebooks Printing",
+        "services.service4.description": "Printing of annual calendars, notebooks, and planners in various shapes and sizes",
+        "services.service5.title": "Cards & Brochures Printing",
+        "services.service5.description": "Professional designs for business cards, invitations, brochures and flyers",
+        "services.service6.title": "Design Services",
+        "services.service6.description": "Professional graphic design for all printing products with a team of creative designers",
+        
+        // Portfolio
+        "portfolio.title": "Our Portfolio",
+        "portfolio.item1.title": "Book Printing",
+        "portfolio.item1.description": "Professional designs for books of various sizes",
+        "portfolio.item2.title": "Business Cards",
+        "portfolio.item2.description": "Innovative designs for business cards",
+        "portfolio.item3.title": "Packaging Designs",
+        "portfolio.item3.description": "Innovative solutions for product packaging",
+        "portfolio.item4.title": "Annual Calendars",
+        "portfolio.item4.description": "Distinctive calendar designs",
+        "portfolio.item5.title": "Brochures",
+        "portfolio.item5.description": "Innovative promotional designs",
+        "portfolio.item6.title": "Magazines",
+        "portfolio.item6.description": "High-quality magazine printing",
+        
+        // Features
+        "features.title": "Why Choose Al-Waraqiah Printing?",
+        "features.feature1.title": "High Quality",
+        "features.feature1.description": "We use the best materials and latest technologies to ensure the highest quality standards",
+        "features.feature2.title": "On-Time Delivery",
+        "features.feature2.description": "We commit to agreed delivery dates without delay",
+        "features.feature3.title": "Competitive Prices",
+        "features.feature3.description": "We offer the best prices while maintaining high quality",
+        "features.feature4.title": "Creative Designs",
+        "features.feature4.description": "A creative design team that provides innovative ideas to meet your needs",
+        "features.feature5.title": "Full Technical Support",
+        "features.feature5.description": "Customer service available 24/7 to assist you",
+        "features.feature6.title": "Delivery Service",
+        "features.feature6.description": "We provide fast and secure delivery service throughout the Kingdom",
+        
+        // Testimonials
+        "testimonials.title": "Client Testimonials",
+        "testimonials.testimonial1.text": "I dealt with Al-Waraqiah Printing to print my books and the result was excellent. The quality is high and delivery was on time. I recommend everyone to deal with them.",
+        "testimonials.testimonial1.author": "Mr. Mohammed Al-Sudairi",
+        "testimonials.testimonial1.role": "Writer & Author",
+        "testimonials.testimonial2.text": "The best printing press I've dealt with in terms of quality, price and customer service. The design team is very creative and offers great ideas.",
+        "testimonials.testimonial2.author": "Al-Nokhba Trading Company",
+        "testimonials.testimonial2.role": "Marketing Manager",
+        "testimonials.testimonial3.text": "We've printed all our promotional materials with Al-Waraqiah Printing for 5 years and they've never disappointed us. The quality improves year after year.",
+        "testimonials.testimonial3.author": "Al-Ajyal School",
+        "testimonials.testimonial3.role": "School Principal",
+        
+        // Contact
+        "contact.title": "Contact Us",
+        "contact.subtitle": "We're here to help with all your inquiries and requests",
+        
+        // Form
+        "form.name": "Full Name",
+        "form.email": "Email Address",
+        "form.phone": "Phone Number",
+        "form.service": "Requested Service Type",
+        "form.serviceDefault": "Select Service Type",
+        "form.service1": "Book Printing",
+        "form.service2": "Document Printing",
+        "form.service3": "Graphic Design",
+        "form.service4": "Packaging Printing",
+        "form.service5": "Printing Consultation",
+        "form.message": "Request Details",
+        "form.submit": "Submit Request",
+        
+        // Footer
+        "footer.aboutTitle": "Al-Waraqiah Printing",
+        "footer.aboutText": "Specialists in all types of printing services since 2008. We provide integrated solutions from design to printing and packaging.",
+        "footer.linksTitle": "Quick Links",
+        "footer.link1": "Our Services",
+        "footer.link2": "Portfolio",
+        "footer.link3": "Why Choose Us",
+        "footer.link4": "Contact Us",
+        "footer.contactTitle": "Contact Information",
+        "footer.address": "Riyadh, Saudi Arabia",
+        "footer.copyright": "© 2023 Al-Waraqiah Printing. All Rights Reserved."
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Set initial language
+    let currentLang = 'ar';
+    
+    // Get DOM elements
+    const languageToggle = document.getElementById('languageToggle');
+    const currentLanguageText = document.getElementById('currentLanguage');
+    
+    // Initialize language
+    updateLanguage(currentLang);
+    
+    // Language toggle button event
+    languageToggle.addEventListener('click', function() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      updateLanguage(currentLang);
+    });
+    
+    // Update all language-related elements
+    function updateLanguage(lang) {
+      // Update button text
+      currentLanguageText.textContent = lang === 'ar' ? 'English' : 'العربية';
+      
+      // Update HTML attributes
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Toggle Bootstrap RTL/LTR
+      const rtlCSS = document.getElementById('bootstrap-rtl-css');
+      const ltrCSS = document.getElementById('bootstrap-ltr-css');
+      
+      if (lang === 'ar') {
+        rtlCSS.disabled = false;
+        ltrCSS.disabled = true;
+      } else {
+        rtlCSS.disabled = true;
+        ltrCSS.disabled = false;
+      }
+      
+      // Update all translatable content
+      updateContent(lang);
+    }
+    
+    // Update all elements with data-key attributes
+    function updateContent(lang) {
+      document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[lang]?.[key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translations[lang][key];
+          } else if (element.tagName === 'OPTION') {
+            element.textContent = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+    }
+
+    // Animation functionality (keep your existing code)
+    const fadeElements = document.querySelectorAll(".fade-in");
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("animate");
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => fadeInObserver.observe(element));
+
+    // Navbar scroll effect (keep your existing code)
+    window.addEventListener("scroll", function() {
+      const navbar = document.querySelector(".navbar");
+      navbar.style.padding = window.scrollY > 50 ? "10px 0" : "20px 0";
+      navbar.style.boxShadow = window.scrollY > 50 
+        ? "0 2px 20px rgba(0, 0, 0, 0.15)" 
+        : "0 2px 20px rgba(0, 0, 0, 0.1)";
+    });
+  });
+   </script>
+</body>
+</html>

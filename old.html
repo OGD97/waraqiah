@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مطبعة الورقية | خدمات طباعة عالية الجودة</title>
+
+    <!-- Bootstrap CSS RTL -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - Tajawal for Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #92342F; /* Main deep reddish-brown */
+        --primary-light: #B05A55; /* Lighter version of main color */
+        --primary-dark: #6D2521; /* Darker version of main color */
+        --secondary-color: #5E4A3E; /* Complementary brown */
+        --accent-color: #C77D78; /* Accent color */
+        --text-dark: #333333; /* Dark text color */
+        --text-light: #555555; /* Light text color */
+        --text-muted: #777777; /* Muted text color */
+        --bg-light: #f8f5f3; /* Light background */
+        --bg-white: #ffffff; /* White background */
+        --border-color: #e0d9d6; /* Border color */
+      }
+
+      * {
+        font-family: "Tajawal", sans-serif;
+      }
+
+      body {
+        background: var(--bg-light);
+        overflow-x: hidden;
+        text-align: right;
+      }
+
+      /* Header Styles */
+      .navbar {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-dark) !important;
+        transition: all 0.3s ease;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(146, 52, 47, 0.1) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+
+      .app-image {
+        max-width: 80%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(146, 52, 47, 0.2);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* CTA Buttons */
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .cta-btn {
+        background: var(--primary-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(146, 52, 47, 0.2);
+        font-weight: 500;
+      }
+
+      .cta-btn:hover {
+        background: var(--primary-dark);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(109, 37, 33, 0.3);
+      }
+
+      .cta-btn i {
+        font-size: 1.5rem;
+      }
+
+      .cta-btn .small-text {
+        font-size: 0.8rem;
+        display: block;
+        line-height: 1;
+      }
+
+      .cta-btn .large-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 80px 0;
+        background-color: var(--bg-white);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--primary-light)
+        );
+        position: absolute;
+        bottom: -15px;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 2px;
+      }
+
+      .feature-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid var(--border-color);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.1);
+        border-color: var(--primary-color);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-light)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .feature-description {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      /* Services Section */
+      .services-section {
+        background: linear-gradient(135deg, var(--bg-light) 0%, #f0e9e7 100%);
+        padding: 80px 0;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid var(--primary-color);
+      }
+
+      .service-number {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgba(146, 52, 47, 0.1);
+        line-height: 1;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.1);
+      }
+
+      .service-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .service-description {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-light) 100%
+        );
+        padding: 80px 0;
+        color: white;
+      }
+
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .testimonial-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .testimonial-text::before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: -20px;
+        right: -15px;
+        opacity: 0.2;
+        font-family: serif;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+      }
+
+      .testimonial-role {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--primary-dark);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .contact-btn {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(146, 52, 47, 0.3);
+      }
+
+      .contact-btn:hover {
+        background: var(--primary-light);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(176, 90, 85, 0.4);
+      }
+
+      /* Portfolio Section */
+      .portfolio-section {
+        padding: 80px 0;
+        background-color: var(--bg-white);
+      }
+
+      .portfolio-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+        height: 300px;
+      }
+
+      .portfolio-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(146, 52, 47, 0.2);
+      }
+
+      .portfolio-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(146, 52, 47, 0.8), transparent);
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-card:hover .portfolio-overlay {
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--text-dark);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        font-size: 0.9rem;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--accent-color);
+        color: var(--text-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+
+      .fade-in.animate {
+        opacity: 1;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 60px 0;
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="display: flex; align-items: center; gap: 15px"
+        >
+          <!-- Your logo -->
+          <div
+            style="
+              width: 75px;
+              height: 75px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <img
+              src="logo.png"
+              alt="مطبعة الورقية Logo"
+              style="
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+              "
+            />
+          </div>
+    
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">معرض الأعمال</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">لماذا نحن؟</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content fade-in">
+            <h1 class="hero-title">مطبعة الورقية</h1>
+            <h2 class="hero-subtitle">
+              حلول طباعة متكاملة بجودة عالية
+            </h2>
+            <p class="hero-description">
+              نقدم في مطبعة الورقية خدمات طباعة متكاملة بدءاً من التصميم وحتى الطباعة والتغليف. نستخدم أحدث التقنيات ومواد عالية الجودة لضمان إرضاء عملائنا.
+            </p>
+            <div class="cta-buttons">
+              <a href="#contact" class="cta-btn">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <span class="large-text">اطلب خدمتك الآن</span>
+                </div>
+              </a>
+              <a href="#portfolio" class="cta-btn" style="background: var(--secondary-color)">
+                <i class="fas fa-images"></i>
+                <div>
+                  <span class="large-text">معرض الأعمال</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center fade-in">
+            <img
+              src="images/hero.svg"
+              alt="مطبعة الورقية"
+              class="app-image img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">سنوات الخبرة</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">عميل راضٍ</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">نوع خدمة</div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">خدمة عملاء</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title fade-in">خدماتنا</h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">1</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-book fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">طباعة الكتب والمجلات</h3>
+              <p class="service-description">
+                طباعة الكتب والمجلات بجودة عالية وبأحجام مختلفة مع خيارات متعددة للتغليف
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">2</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-file-invoice fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">طباعة المستندات الرسمية</h3>
+              <p class="service-description">
+                طباعة الفواتير، الشهادات، السير الذاتية والمستندات الرسمية الأخرى
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">3</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-box-open fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">طباعة العبوات والتغليف</h3>
+              <p class="service-description">
+                تصميم وطباعة عبوات المنتجات بجودة عالية تناسب مختلف أنواع السلع
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">4</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-calendar-alt fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">طباعة التقاويم والدفاتر</h3>
+              <p class="service-description">
+                طباعة تقاويم سنوية، دفاتر ملاحظات، ومفكرات بأشكال وأحجام مختلفة
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">5</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-id-card fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">طباعة البطاقات والبروشورات</h3>
+              <p class="service-description">
+                تصاميم احترافية لبطاقات العمل، الدعوات، البروشورات والفلائر
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card fade-in">
+              <div class="service-number">6</div>
+              <div class="service-icon">
+                <i
+                  class="fas fa-pen-fancy fa-3x mb-3"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h3 class="service-title">خدمات التصميم</h3>
+              <p class="service-description">
+                تصميم جرافيك احترافي لجميع منتجات الطباعة بفريق من المصممين المبدعين
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-title fade-in">معرض أعمالنا</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="كتب">
+              <div class="portfolio-overlay">
+                <h3>طباعة الكتب</h3>
+                <p>تصاميم احترافية لكتب بمختلف الأحجام</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="بطاقات">
+              <div class="portfolio-overlay">
+                <h3>بطاقات العمل</h3>
+                <p>تصاميم مبتكرة لبطاقات العمل</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="تغليف">
+              <div class="portfolio-overlay">
+                <h3>تصاميم التغليف</h3>
+                <p>حلول مبتكرة لتغليف المنتجات</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1583947581924-a6d8c6bf5a1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="تقاويم">
+              <div class="portfolio-overlay">
+                <h3>التقاويم السنوية</h3>
+                <p>تصاميم مميزة للتقاويم</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="بروشورات">
+              <div class="portfolio-overlay">
+                <h3>البروشورات</h3>
+                <p>تصاميم دعائية مبتكرة</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portfolio-card fade-in">
+              <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="مجلات">
+              <div class="portfolio-overlay">
+                <h3>المجلات</h3>
+                <p>طباعة مجلات بجودة عالية</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title fade-in">لماذا تختار مطبعة الورقية؟</h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3 class="feature-title">جودة عالية</h3>
+              <p class="feature-description">
+                نستخدم أفضل المواد وأحدث التقنيات لضمان أعلى مستويات الجودة
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3 class="feature-title">تسليم في الوقت المحدد</h3>
+              <p class="feature-description">
+                نلتزم بمواعيد التسليم المتفق عليها دون تأخير
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <h3 class="feature-title">أسعار تنافسية</h3>
+              <p class="feature-description">
+                نقدم أفضل الأسعار مع الحفاظ على الجودة العالية
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="feature-title">تصاميم إبداعية</h3>
+              <p class="feature-description">
+                فريق تصميم مبدع يقدم أفكاراً مبتكرة تلبي احتياجاتك
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3 class="feature-title">دعم فني متكامل</h3>
+              <p class="feature-description">
+                خدمة عملاء متاحة على مدار الساعة لمساعدتك
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <h3 class="feature-title">خدمة التوصيل</h3>
+              <p class="feature-description">
+                نقدم خدمة توصيل سريعة وآمنة لجميع أنحاء المملكة
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title fade-in" style="color: white">
+          آراء عملائنا
+        </h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                تعاملت مع مطبعة الورقية لطباعة كتبي وكانت النتيجة ممتازة. الجودة عالية والتسليم في الموعد المحدد. أنصح الجميع بالتعامل معهم.
+              </p>
+              <div class="testimonial-author">أ. محمد السديري</div>
+              <div class="testimonial-role">كاتب ومؤلف</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                أفضل مطبعة تعاملت معها من حيث الجودة والسعر وخدمة العملاء. فريق التصميم مبدع جداً ويقدم أفكاراً رائعة.
+              </p>
+              <div class="testimonial-author">شركة النخبة للتجارة</div>
+              <div class="testimonial-role">مدير التسويق</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                طبعنا جميع مطبوعاتنا الدعائية مع مطبعة الورقية منذ 5 سنوات ولم نخيب ظننا أبداً. الجودة تتطور عاماً بعد عام.
+              </p>
+              <div class="testimonial-author">مدرسة الأجيال</div>
+              <div class="testimonial-role">مدير المدرسة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="contact-title fade-in">تواصل معنا</h2>
+        <p class="lead fade-in">
+          نحن هنا لمساعدتك في جميع استفساراتك وطلباتك
+        </p>
+        <div class="contact-buttons fade-in">
+          <a href="tel:+966500000000" class="contact-btn">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a href="mailto:info@alwaraqiah.com" class="contact-btn">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/966500000000" class="contact-btn">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/alwaraqiah" class="contact-btn">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/alwaraqiah" class="contact-btn">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col-lg-6 mx-auto">
+            <form class="fade-in" style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="الاسم الكامل" style="background: rgba(255,255,255,0.8);">
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="البريد الإلكتروني" style="background: rgba(255,255,255,0.8);">
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="رقم الهاتف" style="background: rgba(255,255,255,0.8);">
+              </div>
+              <div class="mb-3">
+                <select class="form-select" style="background: rgba(255,255,255,0.8);">
+                  <option selected>نوع الخدمة المطلوبة</option>
+                  <option>طباعة كتب</option>
+                  <option>طباعة مستندات</option>
+                  <option>تصاميم جرافيك</option>
+                  <option>طباعة عبوات</option>
+                  <option>استشارة طباعية</option>
+                </select>
+              </div>
+
+              <textarea class="form-control" rows="4" placeholder="تفاصيل طلبك" style="background: rgba(255,255,255,0.8);"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="background: var(--primary-light); border: none; padding: 12px; font-weight: 600;">
+              أرسل الطلب
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;">مطبعة الورقية</h4>
+          <p>
+            متخصصون في خدمات الطباعة بجميع أنواعها منذ عام 2008. نقدم حلولاً متكاملة من التصميم حتى الطباعة والتغليف.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;">روابط سريعة</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#services" style="color: white; text-decoration: none;">خدماتنا</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#portfolio" style="color: white; text-decoration: none;">معرض الأعمال</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#features" style="color: white; text-decoration: none;">لماذا نحن؟</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="#contact" style="color: white; text-decoration: none;">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;">معلومات الاتصال</h4>
+          <p>
+            <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i>
+            الرياض، المملكة العربية السعودية
+          </p>
+          <p>
+            <i class="fas fa-phone" style="margin-left: 5px;"></i>
+            +966 50 000 0000
+          </p>
+          <p>
+            <i class="fas fa-envelope" style="margin-left: 5px;"></i>
+            info@alwaraqiah.com
+          </p>
+        </div>
+      </div>
+      <hr style="background: rgba(255,255,255,0.1); margin: 2rem 0;">
+      <div class="row">
+        <div class="col-md-6 text-md-start">
+          <p>© 2023 مطبعة الورقية. جميع الحقوق محفوظة.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const fadeInObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      fadeElements.forEach((element) => {
+        fadeInObserver.observe(element);
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.padding = "10px 0";
+          navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.15)";
+        } else {
+          navbar.style.padding = "20px 0";
+          navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
