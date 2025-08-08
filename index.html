@@ -208,55 +208,59 @@
 
 
 
+  .clients {
+  overflow: hidden;
+  padding: 2rem 0;
+  background: white;
+  position: relative;
+}
 
- .clients {
-    overflow: hidden;
-    padding: 2rem 0;
-    background: white;
-    white-space: nowrap;
-    position: relative;
-  }
+.clients:before,
+.clients:after {
+  position: absolute;
+  top: 0;
+  width: 450px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
 
-  .clients:before,
-  .clients:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
+.clients:before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
 
-  .clients:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-  }
+.clients:after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
 
-  .clients:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-  }
+.clients-container {
+  display: flex;
+}
 
-  .clients-slide {
-    display: inline-block;
-    animation: 20s slide infinite linear;
-  }
+.clients-slide {
+  display: flex;
+  align-items: center;
+  animation: 15s slide infinite linear;
+  /* Add this to prevent layout shift */
+  min-width: max-content;
+}
 
-  .clients-slide img {
-    height: 50px;
-    margin: 0 40px;
-    display: inline-block;
-    vertical-align: middle;
-  }
+.clients-slide img {
+  height: 50px;
+  margin: 0 40px;
+  flex-shrink: 0;
+}
 
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 
 
@@ -858,9 +862,9 @@
     </section> -->
 
 
-
-    <section class="clients-section">
-      <div class="clients">
+    <section class="clients">
+      <div class="clients-container">
+        <!-- First set (visible) -->
         <div class="clients-slide">
           <img src="logos/al-baik.svg" alt="Al Baik">
           <img src="logos/juffali.svg" alt="Juffali">
@@ -869,7 +873,9 @@
           <img src="logos/movenpick.svg" alt="Movenpick">
           <img src="logos/patchi.png" alt="Patchi">
           <img src="logos/taajeer.png" alt="Taajeer">
-          <!-- Duplicate the images for seamless looping -->
+        </div>
+        <!-- Second set (duplicate for seamless loop) -->
+        <div class="clients-slide" aria-hidden="true">
           <img src="logos/al-baik.svg" alt="Al Baik">
           <img src="logos/juffali.svg" alt="Juffali">
           <img src="logos/MDL.svg" alt="MDL">
@@ -1619,10 +1625,24 @@
 
 
 
-
-  // Client slider
-  var copy = document.querySelector(".clients-slide").cloneNode(true);
-      document.querySelector(".clients").appendChild(copy);
+  document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.clients-container');
+  const slides = document.querySelectorAll('.clients-slide');
+  
+  // Calculate total width needed
+  const slideWidth = slides[0].offsetWidth;
+  slider.style.width = `${slideWidth * 2}px`;
+  
+  // Reset position when animation completes
+  slides[0].addEventListener('animationiteration', () => {
+    slider.style.transition = 'none';
+    slider.style.transform = 'translateX(0)';
+    setTimeout(() => {
+      slider.style.transition = 'transform 20s linear';
+      slider.style.transform = 'translateX(-50%)';
+    }, 10);
+  });
+});
    </script>
 </body>
 </html>
