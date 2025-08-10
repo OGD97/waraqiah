@@ -208,118 +208,85 @@
 
 
 
-  .clients {
-  overflow: hidden;
-  padding: 2rem 0;
-  background: white;
-  position: relative;
-}
-
-.clients:before,
-.clients:after {
-  position: absolute;
-  top: 0;
-  width: 450px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-
-.clients:before {
-  left: 0;
-  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
-}
-
-.clients:after {
-  right: 0;
-  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
-}
-
-.clients-container {
-  display: flex;
-}
-
-.clients-slide {
-  display: flex;
-  align-items: center;
-  animation: 15s slide infinite linear;
-  /* Add this to prevent layout shift */
-  min-width: max-content;
-}
-
-.clients-slide img {
-  height: 50px;
-  margin: 0 40px;
-  flex-shrink: 0;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
+      .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
   }
-  100% {
-    transform: translateX(-100%);
+
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
   }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.logo-slider-container {
-  overflow: hidden;
-  background-color: #ebebeb;
-  padding: 2rem 0;
-  width: 100%;
-  position: relative;
-}
-
-.logo-slider-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-marquee 30s linear infinite;
-}
-
-.logo-slide {
-  flex: 0 0 auto;
-  width: 180px;
-  margin: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-slide img {
-  max-width: 100%;
-  max-height: 60px;
-  /* filter: grayscale(100%);
-  opacity: 0.7; */
-  transition: all 0.3s ease;
-}
-
-.logo-slide img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-@keyframes scroll-marquee {
-  0% {
-    transform: translateX(0);
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
   }
-  100% {
-    transform: translateX(-50%);
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
   }
-}
+
+  .logos-slide {
+    display: inline-block;
+    animation: 20s slide infinite linear;
+  }
+
+  /* For RTL (Arabic) direction */
+  [dir="rtl"] .logos-slide {
+    animation-name: slide-rtl;
+  }
+
+  .logos-slide img {
+    height: 50px;
+    margin: 0 40px;
+    vertical-align: middle;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .logos-slide img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  /* LTR (English) animation */
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* RTL (Arabic) animation - reversed direction */
+  @keyframes slide-rtl {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(50%);
+    }
+  }
+
+
+
+
+
+
+
+
 
 
 
@@ -843,49 +810,43 @@
     </section>
 
 
-    <!-- Client Section
-    <section class="client-section">
-      <div class="container clients">
-        <h2 class="section-title fade-in" data-key="clients.title">عملاؤنا</h2>
-        <div class="row clients-slide">
-          <div class="col-md-4">
-            <img src="" alt="عميل 1" class="img-fluid fade-in" />
-          </div>
-          <div class="col-md-4">
-            <img src="logos/juffali.svg" alt="عميل 2" class="img-fluid fade-in" />
-          </div>
-          <div class="col-md-4">
-            <img src="logos/mercedes.svg" alt="عميل 3" class="img-fluid fade-in" />
-          </div>
-        </div>
-      </div>
-    </section> -->
 
 
-    <section class="clients">
-      <div class="clients-container">
-        <!-- First set (visible) -->
-        <div class="clients-slide">
-          <img src="logos/al-baik.svg" alt="Al Baik">
-          <img src="logos/juffali.svg" alt="Juffali">
-          <img src="logos/MDL.svg" alt="MDL">
-          <img src="logos/mercedes.svg" alt="Mercedes">
-          <img src="logos/movenpick.svg" alt="Movenpick">
-          <img src="logos/patchi.png" alt="Patchi">
-          <img src="logos/taajeer.png" alt="Taajeer">
-        </div>
-        <!-- Second set (duplicate for seamless loop) -->
-        <div class="clients-slide" aria-hidden="true">
-          <img src="logos/al-baik.svg" alt="Al Baik">
-          <img src="logos/juffali.svg" alt="Juffali">
-          <img src="logos/MDL.svg" alt="MDL">
-          <img src="logos/mercedes.svg" alt="Mercedes">
-          <img src="logos/movenpick.svg" alt="Movenpick">
-          <img src="logos/patchi.png" alt="Patchi">
-          <img src="logos/taajeer.png" alt="Taajeer">
-        </div>
+
+
+
+
+
+
+    <!-- Client Section -->
+
+    <div class="logos">
+      <div class="logos-slide">
+        <img src="logos/al-baik.svg" alt="Al Baik">
+        <img src="logos/juffali.svg" alt="Juffali">
+        <img src="logos/MDL.svg" alt="MDL">
+        <img src="logos/mercedes.svg" alt="Mercedes">
+        <img src="logos/movenpick.svg" alt="Movenpick">
+        <img src="logos/patchi.png" alt="Patchi">
+        <img src="logos/taajeer.png" alt="Taajeer">
+        <!-- Duplicate the logos for seamless looping -->
+        <img src="logos/al-baik.svg" alt="Al Baik">
+        <img src="logos/juffali.svg" alt="Juffali">
+        <img src="logos/MDL.svg" alt="MDL">
+        <img src="logos/mercedes.svg" alt="Mercedes">
+        <img src="logos/movenpick.svg" alt="Movenpick">
+        <img src="logos/patchi.png" alt="Patchi">
+        <img src="logos/taajeer.png" alt="Taajeer">
       </div>
-    </section>
+    </div>
+    
+
+
+
+
+
+
+
 
 
     <!-- Stats Section -->
@@ -1621,28 +1582,9 @@
 
 
 
+  // var copy = document.querySelector(".logos-slide").cloneNode(true);
+  //     document.querySelector(".logos").appendChild(copy);
 
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.clients-container');
-  const slides = document.querySelectorAll('.clients-slide');
-  
-  // Calculate total width needed
-  const slideWidth = slides[0].offsetWidth;
-  slider.style.width = `${slideWidth * 2}px`;
-  
-  // Reset position when animation completes
-  slides[0].addEventListener('animationiteration', () => {
-    slider.style.transition = 'none';
-    slider.style.transform = 'translateX(0)';
-    setTimeout(() => {
-      slider.style.transition = 'transform 20s linear';
-      slider.style.transform = 'translateX(-50%)';
-    }, 10);
-  });
-});
    </script>
 </body>
 </html>
