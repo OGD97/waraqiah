@@ -98,108 +98,237 @@
         background: var(--primary-dark);
       }
 
-      /* Hero Section */
-      .hero-section {
-        padding-top: 80px; /* Add padding to account for fixed navbar */
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        background: linear-gradient(
-          135deg,
-          rgba(146, 52, 47, 0.1) 0%,
-          rgba(255, 255, 255, 1) 100%
-        );
-      }
+
+
+
       
+/* Hero Section with Video Background */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow: hidden;
+}
 
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: var(--primary-dark);
-        margin-bottom: 1rem;
-      }
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-      .hero-subtitle {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-      }
+/* .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(109, 37, 33, 0.7) 0%, 
+    rgba(146, 52, 47, 0.5) 50%, 
+    rgba(176, 90, 85, 0.3) 100%
+  );
+  z-index: 1;
+} */
 
-      .hero-description {
-        font-size: 1.2rem;
-        color: var(--text-light);
-        line-height: 1.8;
-        margin-bottom: 2.5rem;
-      }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* backdrop-filter: blur(8px); */
+  border-radius: 15px;
+  /* border: 1px solid rgba(255, 252, 232, 0.15); */
+  max-width: 90%;
+  margin: 0 auto;
+}
 
-      .app-image {
-        max-width: 80%;
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(146, 52, 47, 0.2);
-        animation: float 3s ease-in-out infinite;
-      }
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--bg-white);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-      }
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: var(--beige);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-      /* CTA Buttons */
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--bg-white);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+}
 
-      .cta-btn {
-        background: var(--primary-color);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 10px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(146, 52, 47, 0.2);
-        font-weight: 500;
-      }
+/* Enhanced CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
 
-      .cta-btn:hover {
-        background: var(--primary-dark);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(109, 37, 33, 0.3);
-      }
+.cta-btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
 
-      .cta-btn i {
-        font-size: 1.5rem;
-      }
+.cta-btn {
+  background: var(--primary-color);
+  color: var(--bg-white);
+}
 
-      .cta-btn .small-text {
-        font-size: 0.8rem;
-        display: block;
-        line-height: 1;
-      }
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
 
-      .cta-btn .large-text {
-        font-size: 1.1rem;
-        font-weight: 600;
-        line-height: 1.2;
-      }
+.cta-btn[style*="background: var(--bg-white)"] {
+  background: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.cta-btn[style*="background: var(--bg-white)"]:hover {
+  background: transparent;
+}
+
+.cta-btn i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover i {
+  transform: scale(1.1);
+}
+
+.cta-btn .large-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Fallback Image */
+.fallback-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199.98px) {
+  .hero-content {
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+    padding: 150px 0 80px;
+  }
+  
+  .hero-content {
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  
+  .video-background video {
+    object-position: 60% center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-content {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-btn {
+    padding: 12px 24px;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -250,15 +379,15 @@
     height: 50px;
     margin: 0 40px;
     vertical-align: middle;
-    filter: grayscale(100%);
-    opacity: 0.7;
+    /* filter: grayscale(100%); */
+    opacity: 0.;
     transition: all 0.3s ease;
   }
 
-  .logos-slide img:hover {
+  /* .logos-slide img:hover {
     filter: grayscale(0%);
     opacity: 1;
-  }
+  } */
 
   /* LTR (English) animation */
   @keyframes slide {
@@ -557,7 +686,7 @@
         left: 0;
         right: 0;
         background: linear-gradient(to top, rgba(146, 52, 47, 0.8), transparent);
-        color: white;
+        color: var(--primary-dark);
         padding: 20px;
         transform: translateY(100%);
         transition: transform 0.3s ease;
@@ -591,7 +720,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: var(--primary-color);
         transition: all 0.3s ease;
       }
 
@@ -772,7 +901,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- <section class="hero-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 hero-content fade-in">
@@ -807,8 +936,60 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
+
+
+
+
+
+
+
+
+
+
+    <section class="hero-section">
+      <!-- Video Background Container -->
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="/videos/home-video.mp4" type="video/mp4">
+          <!-- Fallback image if video doesn't load -->
+          <img src="images/hero.svg" alt="مطبعة الورقية" class="fallback-image">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      
+      <!-- Content Container (same as before but with adjusted styling) -->
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content fade-in">
+            <h1 class="hero-title" data-key="hero.title">مطبعة الورقية</h1>
+            <h2 class="hero-subtitle" data-key="hero.subtitle">
+              حلول طباعة متكاملة بجودة عالية
+            </h2>
+            <p class="hero-description" data-key="hero.description">
+              نقدم في مطبعة الورقية خدمات طباعة متكاملة بدءاً من التصميم وحتى الطباعة والتغليف. نستخدم أحدث التقنيات ومواد عالية الجودة لضمان إرضاء عملائنا.
+            </p>
+            <div class="cta-buttons fade-in">
+              <a href="#contact" class="cta-btn">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <span class="large-text" data-key="hero.cta1">اطلب خدمتك الآن</span>
+                </div>
+              </a>
+              <a href="#portfolio" class="cta-btn" style="background: var(--primary-color)">
+                <i class="fas fa-images"></i>
+                <div>
+                  <span class="large-text" data-key="hero.cta2">معرض الأعمال</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Empty column to maintain layout (or you can add content here) -->
+          <div class="col-lg-6"></div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -1224,16 +1405,16 @@
           <h4 style="font-weight: 600; margin-bottom: 1rem;" data-key="footer.linksTitle">روابط سريعة</h4>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;">
-              <a href="#services" style="color: white; text-decoration: none;" data-key="footer.link1">خدماتنا</a>
+              <a href="#services" style="color: var(--primary-color); text-decoration: none;" data-key="footer.link1">خدماتنا</a>
             </li>
             <li style="margin-bottom: 0.5rem;">
-              <a href="#portfolio" style="color: white; text-decoration: none;" data-key="footer.link2">معرض الأعمال</a>
+              <a href="#portfolio" style="color: var(--primary-color); text-decoration: none;" data-key="footer.link2">معرض الأعمال</a>
             </li>
             <li style="margin-bottom: 0.5rem;">
-              <a href="#features" style="color: white; text-decoration: none;" data-key="footer.link3">لماذا نحن؟</a>
+              <a href="#features" style="color: var(--primary-color); text-decoration: none;" data-key="footer.link3">لماذا نحن؟</a>
             </li>
             <li style="margin-bottom: 0.5rem;">
-              <a href="#contact" style="color: white; text-decoration: none;" data-key="footer.link4">اتصل بنا</a>
+              <a href="#contact" style="color: var(--primary-color); text-decoration: none;" data-key="footer.link4">اتصل بنا</a>
             </li>
           </ul>
         </div>
@@ -1245,7 +1426,7 @@
           </p>
           <p>
             <i class="fas fa-phone" style="margin-left: 7px; margin-right: 7px"></i>
-            +966 55 568 6277
+            <span dir="ltr">+966 55 568 6277</span>
           </p>
           <p>
             <i class="fas fa-envelope" style="margin-left: 7px; margin-right: 7px"></i>
