@@ -703,6 +703,12 @@
         transform: translateY(0);
       }
 
+
+      /* Form */
+     [dir="rtl"] .form-control {
+      direction: rtl;
+      }
+
       /* Footer */
       .footer {
         background: var(--beige);
@@ -737,6 +743,9 @@
         transform: translateY(-3px);
       }
 
+
+
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .hero-title {
@@ -754,6 +763,14 @@
         .section-title {
           font-size: 2rem;
         }
+
+        .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        margin-top: 2rem;
+      }
+  
       }
 
 
@@ -786,19 +803,6 @@
   
 }
 
-
-
-@media (max-width: 767.98px) {
-
-
-  .stat-number {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        margin-top: 2rem;
-      }
-  
-}
 
       /* Animations */
       .fade-in {
@@ -834,6 +838,7 @@
         text-align: left;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
+
       
       [lang="en"] .section-title::after {
         left: 50%;
@@ -1364,28 +1369,28 @@
         <div class="row mt-5">
           <div class="col-lg-6 mx-auto">
             <div class="fade-in" style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
-              <form>
+              <form action="https://formspree.io/f/mnnzwnag" method="POST">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="الاسم الكامل" style="background: rgba(255,255,255,0.8);" data-key="form.name">
+                  <input type="text" name="name" class="form-control" placeholder="الاسم الكامل" style="background: rgba(255,255,255,0.8);" data-key="form.name" required>
                 </div>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="البريد الإلكتروني" style="background: rgba(255,255,255,0.8);" data-key="form.email">
+                  <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني" style="background: rgba(255,255,255,0.8);" data-key="form.email" required>
                 </div>
                 <div class="mb-3">
-                  <input type="tel" class="form-control" placeholder="رقم الهاتف" style="background: rgba(255,255,255,0.8);" data-key="form.phone">
+                  <input type="tel" name="phone" class="form-control" placeholder="رقم الهاتف" style="background: rgba(255,255,255,0.8);" data-key="form.phone">
                 </div>
                 <div class="mb-3">
-                  <select class="form-select" style="background: rgba(255,255,255,0.8);" data-key="form.service">
-                    <option selected data-key="form.serviceDefault">نوع الخدمة المطلوبة</option>
-                    <option data-key="form.service1">طباعة كتب</option>
-                    <option data-key="form.service2">طباعة مستندات</option>
-                    <option data-key="form.service3">تصاميم جرافيك</option>
-                    <option data-key="form.service4">طباعة عبوات</option>
-                    <option data-key="form.service5">استشارة طباعية</option>
+                  <select class="form-select" name="service" style="background: rgba(255,255,255,0.8);" data-key="form.service" required>
+                    <option value="" selected data-key="form.serviceDefault">نوع الخدمة المطلوبة</option>
+                    <option value="طباعة كتب" data-key="form.service1">طباعة كتب</option>
+                    <option value="طباعة مستندات" data-key="form.service2">طباعة مستندات</option>
+                    <option value="تصاميم جرافيك" data-key="form.service3">تصاميم جرافيك</option>
+                    <option value="طباعة عبوات" data-key="form.service4">طباعة عبوات</option>
+                    <option value="استشارة طباعية" data-key="form.service5">استشارة طباعية</option>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <textarea class="form-control" rows="4" placeholder="تفاصيل طلبك" style="background: rgba(255,255,255,0.8);" data-key="form.message"></textarea>
+                  <textarea class="form-control" name="message" rows="4" placeholder="تفاصيل طلبك" style="background: rgba(255,255,255,0.8);" data-key="form.message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary w-100" style="background: var(--primary-light); border: none; padding: 12px; font-weight: 600;" data-key="form.submit">
                   أرسل الطلب
