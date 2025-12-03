@@ -730,7 +730,7 @@
 
       /* Footer */
       .footer {
-        background: var(--beige);
+        background: var(--bg-white);
         color: var(--primary-color);
         text-align: center;
         padding: 2rem 0;
@@ -739,9 +739,10 @@
 
       .social-icons {
         display: flex;
-        justify-content: center;
+        flex: start;
+        justify-content: flex-end;
         gap: 1rem;
-        margin-top: 1.5rem;
+        margin-top: -.75rem;
       }
 
       .social-icon {
@@ -763,6 +764,40 @@
       }
 
 
+
+
+
+
+   /* Responsive Design */
+      @media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+    padding: 150px 0 60px; /* Adjust padding for mobile */
+  }
+  
+  .hero-content {
+    padding-top: 30px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .social-icons {
+        justify-content: flex-end;
+      }
+  
+}
 
 
       /* Responsive Design */
@@ -789,39 +824,13 @@
         margin-bottom: 0.5rem;
         margin-top: 2rem;
       }
-  
-      }
+ 
 
-
-
-
-
-      @media (max-width: 991.98px) {
-  .hero-section {
-    min-height: auto;
-    padding: 150px 0 60px; /* Adjust padding for mobile */
-  }
-  
-  .hero-content {
-    padding-top: 30px;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
-
-  .stat-number {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+      .social-icons {
+        justify-content: center;
       }
   
-}
-
+      }
 
       /* Animations */
       .fade-in {
@@ -1291,6 +1300,8 @@
             </div>
           </div>
         </div>
+
+        <h2 class="fade-in" data-key="portfolio.footer">And more...</h2>
       </div>
     </section>
 
@@ -1594,6 +1605,7 @@
         "portfolio.item5.description": "تصاميم دعائية مبتكرة",
         "portfolio.item6.title": "ستيكرات",
         "portfolio.item6.description": "طباعة ستيكرات بجودة عالية",
+        "portfolio.footer": "و المزيد...",
         
         // Features
         "features.title": "لماذا تختار المطبعة الورقية؟",
@@ -1701,6 +1713,7 @@
         "portfolio.item5.description": "Innovative promotional designs",
         "portfolio.item6.title": "Stickers",
         "portfolio.item6.description": "High-quality stickers printing",
+        "portfolio.footer": "And more...",
         
         // Features
         "features.title": "Why Choose Al-Waraqiah Printing?",
