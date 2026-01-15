@@ -729,9 +729,9 @@
       /* Container with blurred bottom */
 .portfolio-wrapper {
   position: relative;
-  max-height: 640px; /* Adjusted to show first 2 rows */
+  max-height: 660px; /* Adjusted to show first 2 rows on desktop/mobile */
   overflow: hidden;
-  transition: max-height 1s ease-in-out;
+  transition: max-height 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Blur overlay */
@@ -750,7 +750,7 @@
 
 /* When expanded */
 .portfolio-expanded {
-  max-height: 2000px; /* Large enough for all items */
+  max-height: 8000px; /* Much larger to accommodate all stacked cards on mobile */
 }
 
 .portfolio-expanded .portfolio-blur {
