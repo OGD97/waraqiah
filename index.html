@@ -729,9 +729,9 @@
       /* Container with blurred bottom */
 .portfolio-wrapper {
   position: relative;
-  max-height: 600px; /* initial cropped height */
+  max-height: 640px; /* Adjusted to show first 2 rows */
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 1s ease-in-out;
 }
 
 /* Blur overlay */
@@ -740,20 +740,49 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 120px;
+  height: 200px;
   width: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.9));
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.98));
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
+  z-index: 10;
 }
 
 /* When expanded */
 .portfolio-expanded {
-  max-height: 2000px; /* expand enough to show all items */
+  max-height: 2000px; /* Large enough for all items */
 }
 
 .portfolio-expanded .portfolio-blur {
   opacity: 0;
+}
+
+/* Show More Button Stylings */
+#showMoreBtn {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(146, 52, 47, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+#showMoreBtn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(146, 52, 47, 0.4);
+}
+
+#showMoreBtn i {
+  transition: transform 0.4s ease;
+}
+
+.portfolio-expanded #showMoreBtn i {
+  transform: rotate(180deg);
 }
 
 
@@ -1296,93 +1325,186 @@
     <section id="portfolio" class="portfolio-section">
       <div class="container">
         <h2 class="section-title fade-in" data-key="portfolio.title">معرض أعمالنا</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/catalog.png" alt="كتب">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item1.title">طباعة الكتب</h3>
-                <p data-key="portfolio.item1.description">تصاميم احترافية لكتب بمختلف الأحجام</p>
+        <div class="portfolio-wrapper">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/catalog.png" alt="كتب">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item1.title">طباعة الكتب</h3>
+                  <p data-key="portfolio.item1.description">تصاميم احترافية لكتب بمختلف الأحجام</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/bscard.png" alt="بطاقات">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item2.title">بطاقات العمل</h3>
+                  <p data-key="portfolio.item2.description">تصاميم مبتكرة لبطاقات العمل</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/packaging-2.png" alt="تغليف">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item3.title">تصاميم التغليف</h3>
+                  <p data-key="portfolio.item3.description">حلول مبتكرة لتغليف المنتجات</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/calendar.png" alt="تقاويم">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item4.title">التقاويم السنوية</h3>
+                  <p data-key="portfolio.item4.description">تصاميم مميزة للتقاويم</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/brochure.png" alt="بروشورات">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item5.title">البروشورات</h3>
+                  <p data-key="portfolio.item5.description">تصاميم دعائية مبتكرة</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card fade-in">
+                <img src="images/products/sticker.webp" alt="ستيكرات">
+                <div class="portfolio-overlay">
+                  <h3 data-key="portfolio.item6.title">ستيكرات</h3>
+                  <p data-key="portfolio.item6.description">طباعة ستيكرات بجودة عالية</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Extra portfolio items -->
+            <div class="extra-portfolio col-12">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/annual-report.png" alt="Annual Report">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item7.title">Annual Reports</h3>
+                      <p data-key="portfolio.item7.description">Professional corporate reports</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/business-card.png" alt="Business Card">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item8.title">Business Cards</h3>
+                      <p data-key="portfolio.item8.description">Premium identity cards</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/certificate.png" alt="Certificate">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item9.title">Certificates</h3>
+                      <p data-key="portfolio.item9.description">Elegant award certificates</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/event-invitation.png" alt="Invitation">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item10.title">Invitations</h3>
+                      <p data-key="portfolio.item10.description">Creative event invitations</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/lux-box.png" alt="Packaging">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item11.title">Luxury Boxes</h3>
+                      <p data-key="portfolio.item11.description">Premium product packaging</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/header-cards.png" alt="Header Cards">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item12.title">Header Cards</h3>
+                      <p data-key="portfolio.item12.description">Custom printed header cards</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/letterhead.png" alt="Letterhead">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item13.title">Letterheads</h3>
+                      <p data-key="portfolio.item13.description">Official corporate stationery</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/menus.png" alt="Menu">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item14.title">Menus</h3>
+                      <p data-key="portfolio.item14.description">Restaurant menu design</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/presentation-folder.png" alt="Folder">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item15.title">Presentation Folders</h3>
+                      <p data-key="portfolio.item15.description">Professional presentation materials</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/product-inserts.png" alt="Inserts">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item16.title">Product Inserts</h3>
+                      <p data-key="portfolio.item16.description">Informative product inserts</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/rack-cards.png" alt="Rack Cards">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item17.title">Rack Cards</h3>
+                      <p data-key="portfolio.item17.description">Effective marketing rack cards</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="portfolio-card fade-in">
+                    <img src="images/products/AI Images/sticker.png" alt="Stickers">
+                    <div class="portfolio-overlay">
+                      <h3 data-key="portfolio.item18.title">Branded Stickers</h3>
+                      <p data-key="portfolio.item18.description">High-quality branded stickers</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/bscard.png" alt="بطاقات">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item2.title">بطاقات العمل</h3>
-                <p data-key="portfolio.item2.description">تصاميم مبتكرة لبطاقات العمل</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/packaging-2.png" alt="تغليف">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item3.title">تصاميم التغليف</h3>
-                <p data-key="portfolio.item3.description">حلول مبتكرة لتغليف المنتجات</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/calendar.png" alt="تقاويم">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item4.title">التقاويم السنوية</h3>
-                <p data-key="portfolio.item4.description">تصاميم مميزة للتقاويم</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/brochure.png" alt="بروشورات">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item5.title">البروشورات</h3>
-                <p data-key="portfolio.item5.description">تصاميم دعائية مبتكرة</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/sticker.webp" alt="ستيكرات">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item6.title">ستيكرات</h3>
-                <p data-key="portfolio.item6.description">طباعة ستيكرات بجودة عالية</p>
-              </div>
-            </div>
-          </div>
+          <div class="portfolio-blur"></div>
         </div>
 
-        <!-- <h2 class="fade-in" data-key="portfolio.footer">And more...</h2> -->
-
-
-<!-- 
-        <div class="extra-portfolio d-none">
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-card fade-in">
-              <img src="images/products/sticker.webp" alt="ستيكرات">
-              <div class="portfolio-overlay">
-                <h3 data-key="portfolio.item6.title">ستيكرات</h3>
-                <p data-key="portfolio.item6.description">طباعة ستيكرات بجودة عالية</p>
-              </div>
-            </div>
-          </div>
-          </div> -->
-
-
-
-
-
-      
-      <!-- <div class="portfolio-blur"></div> -->
-
-
-      </div>
-
-         
-    <!-- <div class="text-center mt-4">
-      <button id="showMoreBtn" class="btn btn-primary">عرض المزيد</button>
-    </div> -->
+        <div class="text-center mt-5">
+          <button id="showMoreBtn" class="fade-in">
+            <span data-key="portfolio.showMore">عرض المزيد</span>
+            <i class="fas fa-chevron-down ms-2"></i>
+          </button>
+        </div>
       
     </section>
 
@@ -1729,7 +1851,32 @@
         "portfolio.item5.description": "تصاميم دعائية مبتكرة",
         "portfolio.item6.title": "ستيكرات",
         "portfolio.item6.description": "طباعة ستيكرات بجودة عالية",
-        "portfolio.footer": "و المزيد...",
+        "portfolio.item7.title": "تقارير سنوية",
+        "portfolio.item7.description": "تقارير مؤسسية احترافية",
+        "portfolio.item8.title": "بطاقات عمل",
+        "portfolio.item8.description": "بطاقات هوية فاخرة",
+        "portfolio.item9.title": "شهادات تكريم",
+        "portfolio.item9.description": "شهادات مطبوعة بلمسة أنيقة",
+        "portfolio.item10.title": "دعوات مناسبات",
+        "portfolio.item10.description": "دعوات إبداعية لكل المناسبات",
+        "portfolio.item11.title": "صناديق فاخرة",
+        "portfolio.item11.description": "حلول تغليف فاخرة للمنتجات",
+        "portfolio.item12.title": "بطاقات علوية",
+        "portfolio.item12.description": "بطاقات منتجات مخصصة",
+        "portfolio.item13.title": "مطبوعات ورقية",
+        "portfolio.item13.description": "ورق مراسلات رسمي للشركات",
+        "portfolio.item14.title": "قوائم الطعام",
+        "portfolio.item14.description": "تصاميم احترافية لقوائم الطعام",
+        "portfolio.item15.title": "ملفات تقديم",
+        "portfolio.item15.description": "ملفات تقديم متميزة",
+        "portfolio.item16.title": "مرفقات المنتج",
+        "portfolio.item16.description": "معلومات تكميلية للمنتجات",
+        "portfolio.item17.title": "بطاقات عرض",
+        "portfolio.item17.description": "بطاقات تعريفية وتسويقية",
+        "portfolio.item18.title": "ملصقات شعار",
+        "portfolio.item18.description": "ملصقات مطبوعة بدقة عالية",
+        "portfolio.showMore": "عرض المزيد",
+        "portfolio.showLess": "عرض أقل",
         
         // Features
         "features.title": "لماذا تختار المطبعة الورقية؟",
@@ -1837,7 +1984,32 @@
         "portfolio.item5.description": "Innovative promotional designs",
         "portfolio.item6.title": "Stickers",
         "portfolio.item6.description": "High-quality stickers printing",
-        "portfolio.footer": "And more...",
+        "portfolio.item7.title": "Annual Reports",
+        "portfolio.item7.description": "Professional corporate reports",
+        "portfolio.item8.title": "Business Cards",
+        "portfolio.item8.description": "Premium identity cards",
+        "portfolio.item9.title": "Certificates",
+        "portfolio.item9.description": "Elegant award certificates",
+        "portfolio.item10.title": "Invitations",
+        "portfolio.item10.description": "Creative event invitations",
+        "portfolio.item11.title": "Luxury Boxes",
+        "portfolio.item11.description": "Premium product packaging",
+        "portfolio.item12.title": "Header Cards",
+        "portfolio.item12.description": "Custom printed header cards",
+        "portfolio.item13.title": "Letterheads",
+        "portfolio.item13.description": "Official corporate stationery",
+        "portfolio.item14.title": "Menus",
+        "portfolio.item14.description": "Restaurant menu design",
+        "portfolio.item15.title": "Presentation Folders",
+        "portfolio.item15.description": "Professional presentation materials",
+        "portfolio.item16.title": "Product Inserts",
+        "portfolio.item16.description": "Informative product inserts",
+        "portfolio.item17.title": "Rack Cards",
+        "portfolio.item17.description": "Effective marketing rack cards",
+        "portfolio.item18.title": "Branded Stickers",
+        "portfolio.item18.description": "High-quality branded stickers",
+        "portfolio.showMore": "Show More",
+        "portfolio.showLess": "Show Less",
         
         // Features
         "features.title": "Why Choose Al-Waraqiah Printing?",
@@ -1974,27 +2146,24 @@
         ? "0 2px 20px rgba(0, 0, 0, 0.15)" 
         : "0 2px 20px rgba(0, 0, 0, 0.1)";
     });
+
+    document.getElementById("showMoreBtn").addEventListener("click", function () {
+      const wrapper = document.querySelector(".portfolio-wrapper");
+      const span = this.querySelector('span');
+      const isExpanded = wrapper.classList.toggle("portfolio-expanded");
+      
+      // Update button text via translation data-key on the span
+      span.setAttribute('data-key', isExpanded ? "portfolio.showLess" : "portfolio.showMore");
+      
+      // Refresh content for the new key
+      updateContent(currentLang);
+
+      // If collapsing, scroll back to portfolio top smoothly
+      if (!isExpanded) {
+        document.getElementById("portfolio").scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
-
-
-
-
-  // var copy = document.querySelector(".logos-slide").cloneNode(true);
-  //     document.querySelector(".logos").appendChild(copy);
-
-
-
-  document.getElementById("showMoreBtn").addEventListener("click", function () {
-  const wrapper = document.querySelector(".portfolio-wrapper");
-  const extra = document.querySelector(".extra-portfolio");
-
-  extra.classList.toggle("d-none");         // show/hide extra items
-  wrapper.classList.toggle("portfolio-expanded"); // remove height limit + blur
-
-  this.textContent = wrapper.classList.contains("portfolio-expanded")
-    ? "عرض أقل"
-    : "عرض المزيد";
-});
 
 
    </script>
