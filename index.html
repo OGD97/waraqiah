@@ -184,15 +184,21 @@
 .trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(146, 52, 47, 0.08);
-  color: var(--primary-color);
-  padding: 8px 16px;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(184, 134, 11, 0.06));
+  color: #996515; /* Golden brown for readability */
+  padding: 8px 18px;
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(146, 52, 47, 0.2);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  box-shadow: 0 2px 10px rgba(153, 101, 21, 0.05);
+}
+
+.trust-badge i {
+  font-size: 1.1rem;
+  margin-top: -1px; /* Optical alignment fix */
 }
 
 .hero-title {
@@ -1027,6 +1033,10 @@
         text-align: left;
       }
 
+      [lang="en"] .hero-content {
+        text-align: left;
+      }
+
       [lang="ar"] .hero-title {
         text-align: right;
       }
@@ -1036,6 +1046,10 @@
       } 
 
       [lang="ar"] .hero-description {
+        text-align: right;
+      }
+
+      [lang="ar"] .hero-content {
         text-align: right;
       }
 
@@ -1182,7 +1196,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 hero-content fade-in">
             <div class="trust-badge">
-              <i class="fas fa-certificate"></i>
+              <i class="fas fa-award"></i>
               <span data-key="hero.badge">أكثر من 30 عاماً من الخبرة والتميز</span>
             </div>
             <h1 class="hero-title" data-key="hero.title">
