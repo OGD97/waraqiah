@@ -181,6 +181,20 @@
   margin: 0 auto;
 }
 
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(146, 52, 47, 0.08);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(146, 52, 47, 0.2);
+}
+
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -229,23 +243,30 @@
   border: 2px solid transparent;
 }
 
-.cta-btn {
+.cta-btn-primary {
   background: var(--primary-color);
-  color: var(--bg-white);
+  color: white !important;
+  border: 2px solid var(--primary-color);
 }
 
-.cta-btn:hover {
+.cta-btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(146, 52, 47, 0.3);
 }
 
-.cta-btn[style*="background: var(--bg-white)"] {
-  background: var(--primary-light);
-  color: var(--primary-color);
-}
-
-.cta-btn[style*="background: var(--bg-white)"]:hover {
+.cta-btn-outline {
   background: transparent;
+  color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color);
+  box-shadow: none;
+}
+
+.cta-btn-outline:hover {
+  background: rgba(146, 52, 47, 0.05);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(146, 52, 47, 0.1);
 }
 
 .cta-btn i {
@@ -797,6 +818,57 @@
       direction: rtl;
       }
 
+      /* Floating WhatsApp Button */
+      .whatsapp-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 65px;
+        height: 65px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        animation: whatsapp-glow 2s infinite;
+      }
+
+      .whatsapp-btn:hover {
+        transform: scale(1.1);
+        color: white;
+        background-color: #20ba5a;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes whatsapp-glow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Adjust for mobile to not cover important content if needed */
+      @media (max-width: 768px) {
+        .whatsapp-btn {
+          bottom: 20px;
+          right: 20px;
+          width: 55px;
+          height: 55px;
+          font-size: 30px;
+        }
+      }
+
       /* Footer */
       .footer {
         background: var(--bg-white);
@@ -1109,6 +1181,10 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 hero-content fade-in">
+            <div class="trust-badge">
+              <i class="fas fa-certificate"></i>
+              <span data-key="hero.badge">أكثر من 30 عاماً من الخبرة والتميز</span>
+            </div>
             <h1 class="hero-title" data-key="hero.title">
               رؤيتك مطبوعة بالحياة
             </h1>
@@ -1119,18 +1195,18 @@
               نحوّل أفكارك إلى مواد مطبوعة عالية التأثير تحكي قصتك بجمال وإتقان.
             </p>            
             <div class="cta-buttons fade-in">
-              <a href="#contact" class="cta-btn">
+              <a href="#contact" class="cta-btn cta-btn-primary">
                 <i class="fas fa-phone"></i>
                 <div>
                   <span class="large-text" data-key="hero.cta1">اطلب خدمتك الآن</span>
                 </div>
               </a>
-              <!-- <a href="#portfolio" class="cta-btn" style="background: var(--primary-color)">
+              <a href="#portfolio" class="cta-btn cta-btn-outline">
                 <i class="fas fa-images"></i>
                 <div>
                   <span class="large-text" data-key="hero.cta2">معرض الأعمال</span>
                 </div>
-              </a> -->
+              </a>
             </div>
           </div>
           <!-- Empty column to maintain layout (or you can add content here) -->
@@ -1829,6 +1905,7 @@
         "nav.contact": "اتصل بنا",
         
         // Hero Section
+        "hero.badge": "أكثر من 30 عاماً من الخبرة والتميز",
         "hero.title": "رؤيتك مطبوعة بالحياة",
 "hero.subtitle": "شريكك الموثوق في الطباعة بجدة",
 "hero.description": "نحوّل أفكارك إلى مواد مطبوعة عالية التأثير تحكي قصتك بجمال وإتقان.",
@@ -1962,6 +2039,7 @@
         "nav.contact": "Contact Us",
         
         // Hero Section
+        "hero.badge": "Over 30 Years of Excellence",
         "hero.title": "Your Vision, Inked to Life",
 "hero.subtitle": "Your Trusted Printing Partner in Jeddah",
 "hero.description": "We transform your ideas into tangible, high-impact materials that tell your story beautifully.",
@@ -2186,5 +2264,10 @@
 
 
    </script>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/966555686277" class="whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
 </body>
 </html>
